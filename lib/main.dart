@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const defaultTextStyle = TextStyle(fontFamily: 'IranYekan');
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -30,8 +31,13 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        textTheme: TextTheme(
+          bodyMedium: defaultTextStyle,
+          bodySmall: defaultTextStyle,
+          titleLarge: defaultTextStyle.copyWith(fontWeight: FontWeight.bold),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'فروشگاه نایک'),
     );
   }
 }
@@ -106,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'دکمه‌ی + را کلیک کنید:',
             ),
             Text(
               '$_counter',
